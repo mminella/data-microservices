@@ -28,8 +28,8 @@
 * `dataflow:> app register --type source --name twitter --uri maven://org.springframework.cloud.stream.app:twitterstream-source-rabbit:1.0.0.BUILD-SNAPSHOT`
 * `dataflow:> app register --type sink --name file --uri maven://org.springframework.cloud.stream.app:file-sink-rabbit:1.0.0.BUILD-SNAPSHOT`
 * `dataflow:> app register --type sink --name field-value-counter --uri maven://org.springframework.cloud.stream.app:field-value-counter-sink-rabbit:1.0.0.BUILD-SNAPSHOT`
-* `dataflow:> stream create --definition "twitter | file --directory='/Users/mminella'" --name TrumpSoPoor --deploy`
-* `dataflow:> stream create --name TrumpSoPoorCount --definition ":TrumpSoPoor.twitter > field-value-counter --field-name=entities.hashtags.text --name=TrumpSoPoorCountTags" --deploy`
+* `dataflow:> stream create --definition "twitter | file --directory='/Users/mminella'" --name ingest --deploy`
+* `dataflow:> stream create --name ingestCount --definition ":ingest.twitter > field-value-counter --field-name=entities.hashtags.text --name=ingestCountTags" --deploy`
 
 
 
