@@ -27,7 +27,8 @@ import org.springframework.integration.annotation.Transformer;
 @EnableBinding(Processor.class)
 public class TransformerConfiguration {
 
-	@Transformer(inputChannel = Processor.INPUT, outputChannel = Processor.OUTPUT)
+	@Transformer(inputChannel = Processor.INPUT,
+				 outputChannel = Processor.OUTPUT)
 	public String transform(String input) {
 		System.out.println(">> input: " + input);
 
